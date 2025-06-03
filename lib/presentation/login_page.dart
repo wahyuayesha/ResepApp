@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uuk_app/config/colors.dart';
-import 'package:uuk_app/main.dart';
 import 'package:uuk_app/controller/profile_controller.dart';
 import 'package:uuk_app/widget/textfield.dart';
 
@@ -44,38 +43,7 @@ class LoginPage extends StatelessWidget {
               onPressed: () {
                 String username = _usernameController.text;
                 String password = _passwordController.text;
-
-                if (username.isEmpty || password.isEmpty) {
-                  Get.snackbar(
-                    'Error',
-                    'Username dan Password tidak boleh kosong',
-                    backgroundColor: AppColors.errorSnackbar,
-                    colorText: AppColors.errorSnackbarText,
-                  );
-                } else if (password.length < 6) {
-                  Get.snackbar(
-                    'Error',
-                    'Password minimal 6 karakter',
-                    backgroundColor: AppColors.errorSnackbar,
-                    colorText: AppColors.errorSnackbarText,
-                  );
-                } else if (password == '123456' || password == 'qwerty') {
-                  Get.snackbar(
-                    'Error',
-                    '$password? Password kamu overrated, silakan ganti',
-                    backgroundColor: AppColors.errorSnackbar,
-                    colorText: AppColors.errorSnackbarText,
-                  );
-                } else {
-                  profileController.username.value = username;
-                  Get.snackbar(
-                    'Sukses',
-                    'Login Sukses',
-                    backgroundColor: AppColors.successSnackbar,
-                    colorText: AppColors.successSnackbarText,
-                  );
-                  Get.offAll(MainPage(), transition: Transition.zoom);
-                }
+                profileController.loginProfile(username, password);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.buttonColor,
