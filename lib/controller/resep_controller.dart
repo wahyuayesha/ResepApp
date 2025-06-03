@@ -40,4 +40,13 @@ class ResepController extends GetxController{
       isLoading.value = false;
     }
   }
+
+  void searchResep(String query) {
+    if (query.isEmpty) {
+      fetchResep();
+    } else {
+      var filteredList = resepList.where((resep) => resep.name.toLowerCase().contains(query.toLowerCase())).toList();
+      resepList.value = filteredList;
+    }
+  }
 }

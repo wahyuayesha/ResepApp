@@ -44,7 +44,7 @@ class _MainPageState extends State<MainPage> {
 
   void _onItemTapped(int index) {
     if (index == 2) {
-      Get.offAll(LoginPage());
+      Get.offAll(LoginPage(), transition: Transition.zoom);
     }
     setState(() {
       _selectedIndex = index;

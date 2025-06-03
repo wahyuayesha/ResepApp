@@ -15,8 +15,15 @@ class ProfilePage extends StatelessWidget {
         backgroundColor: Colors.redAccent,
       ),
       backgroundColor: Colors.grey.shade100,
-      body: Center(
-        child: Text('Halo, ${profileController.username.value} 👋!', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Center(
+          child: Text(
+            'Halo, ${profileController.username.value} 👋!',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          ),
+        ),
       ),
     );
   }

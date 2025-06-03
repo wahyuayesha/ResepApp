@@ -74,7 +74,7 @@ class LoginPage extends StatelessWidget {
                     backgroundColor: AppColors.successSnackbar,
                     colorText: AppColors.successSnackbarText,
                   );
-                  Get.offAll(MainPage());
+                  Get.offAll(MainPage(), transition: Transition.zoom);
                 }
               },
               style: ElevatedButton.styleFrom(
